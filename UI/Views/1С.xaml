@@ -1,0 +1,50 @@
+﻿<Window x:Class="AIS.Warehouse.UI.Views._1С"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AIS.Warehouse.UI.Views"
+        mc:Ignorable="d"
+        Title="АИС Складской учет" Height="600" Width="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" Background="#FFD0D09E">
+            <MenuItem Header="CreateFile" FontFamily="Bodoni MT Black" Foreground="#FF757527">
+                <MenuItem Header="Excel" Command="{Binding CreateExcelReportCommand}" />
+                <MenuItem Header="Word" Command="{Binding CreateWordReportCommand}" />
+            </MenuItem>
+            <MenuItem Header="OpenFile"
+              Command="{Binding OpenExcelFileCommand}" FontFamily="Bodoni MT Black" Foreground="#FF757527" />
+            <MenuItem Header="Сервис" FontFamily="Bodoni MT Black" Foreground="#FF757527">
+                <MenuItem Header="Журнал операций" Command="{Binding OpenOperationsCommand}" />
+                <MenuItem Header="О компании" Command="{Binding OpenCompanyInfoCommand}" />
+                <MenuItem Header="Сотрудники" Command="{Binding OpenEmployeesCommand}" 
+              ToolTip="Просмотр сотрудников (администраторы)"/>
+            </MenuItem>
+            <MenuItem Header="Таблицы" FontFamily="Bodoni MT Black" Foreground="#FF757527">
+                <MenuItem Header="Товары" Command="{Binding OpenItemsCommand}" />
+                <MenuItem Header="Компании" Command="{Binding OpenCompaniesCommand}" />
+                <MenuItem Header="Поставщики" Command="{Binding OpenSuppliersCommand}" />
+            </MenuItem>
+            <MenuItem Header="Контакты" Command="{Binding OpenContactsCommand}" FontFamily="Bodoni MT Black" Foreground="#FF757527" />
+        </Menu>
+        <Border Background="Beige" Grid.Row="1">
+            <Grid>
+                <TextBlock Text="{Binding WelcomeText}" Foreground="#FFD0D09E" FontSize="16" VerticalAlignment="Center" Margin="20,0,0,0" FontFamily="Bodoni MT Black"/>
+                <TextBlock Text="{Binding CurrentDate}" Foreground="#FFD0D09E" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0"/>
+            </Grid>
+        </Border>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Background="#FFD0D09E" VerticalAlignment="Center">
+            <Button Content="Журнал" Height="30" Width="100" Margin="10,0" Command="{Binding OpenOperationsCommand}" Background="Beige" FontFamily="Bodoni MT Black" Foreground="#FFB1B163"/>
+            <Button Content="Добавить операцию" Height="30" Width="150" Margin="10,0" Command="{Binding OpenAddOperationCommand}" Background="Beige" FontFamily="Bodoni MT Black" Foreground="#FFB1B163"/>
+            <Button Content="Создать товар" Height="30" Width="150" Margin="10,0" Command="{Binding OpenAddItemCommand}" Background="Beige" FontFamily="Bodoni MT Black"  Foreground="#FFB1B163" ToolTip="Добавить новый товар в каталог"/>
+            <Button Content="Сотрудники" Height="30" Width="120" Margin="10,0" Command="{Binding OpenEmployeesCommand}" Background="Beige"  FontFamily="Bodoni MT Black"  Foreground="#FFB1B163" ToolTip="Просмотр сотрудников (только для администраторов)"/>
+        </StackPanel>
+        <ContentControl Grid.Row="3" Content="{Binding CurrentView}"/>
+    </Grid>
+</Window>

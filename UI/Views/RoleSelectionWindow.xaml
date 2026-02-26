@@ -1,0 +1,17 @@
+﻿<Window x:Class="AIS.Warehouse.UI.Views.RoleSelectionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AIS.Warehouse.UI.Views"
+        mc:Ignorable="d"
+        Title="RoleSelectionWindow" Height="350" Width="400" WindowStartupLocation="CenterScreen">
+    <Grid Background="Beige">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="250">
+            <TextBlock Text="Выберите роль" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20" FontFamily="Bodoni MT Black"/>
+            <Button Content="АДМИН" Height="45" Margin="0,5" Command="{Binding AdminCommand}" Background="#FFD0D09E" FontFamily="Bodoni MT Black"/>
+            <Button Content="СОТРУДНИК" Height="45" Margin="0,5" Command="{Binding EmployeeCommand}" Background="#FFD0D09E" FontFamily="Bodoni MT Black"/>
+            <Button Content="ПОСТАВЩИК" Height="45" Margin="0,5" Command="{Binding SupplierCommand}" Background="#FFD0D09E" FontFamily="Bodoni MT Black"/>
+        </StackPanel>
+    </Grid>
+</Window>

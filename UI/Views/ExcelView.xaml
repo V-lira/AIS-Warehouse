@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="AIS.Warehouse.UI.Views.ExcelView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="White">
+        <DockPanel>
+            <Border DockPanel.Dock="Top" Background="#FFD0D09E" Padding="10">
+                <TextBlock Text="Просмотр Excel файла" FontSize="20" FontWeight="Bold" Foreground="White" FontFamily="Bodoni MT Black"/>
+            </Border>
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <DataGrid ItemsSource="{Binding Rows}" AutoGenerateColumns="True" Margin="10" IsReadOnly="True" AlternatingRowBackground="#FFF5F5DC" GridLinesVisibility="All"/>
+            </ScrollViewer>
+        </DockPanel>
+    </Grid>
+    </UserControl>

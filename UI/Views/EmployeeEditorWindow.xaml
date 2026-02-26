@@ -1,0 +1,34 @@
+﻿<Window x:Class="AIS.Warehouse.UI.Views.EmployeeEditorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Редактирование сотрудника" Height="300" Width="400">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="0,0,0,10">
+            <TextBlock Text="Имя:"/>
+            <TextBox Margin="5" Text="{Binding Employee.FirstName}"
+             ToolTip="Введите имя сотрудника"/>
+
+            <TextBlock Text="Фамилия:"/>
+            <TextBox Margin="5" Text="{Binding Employee.LastName}"
+             ToolTip="Введите фамилию сотрудника"/>
+
+            <TextBlock Text="Инициалы:"/>
+            <TextBox Margin="5" Text="{Binding Employee.Initials}"
+             ToolTip="Введите отчество (инициалы)"/>
+
+            <TextBlock Text="Логин:"/>
+            <TextBox Margin="5" Text="{Binding Employee.Login}"
+             ToolTip="Логин (email) сотрудника"/>
+
+            <TextBlock Text="Роль:"/>
+            <ComboBox Margin="5" SelectedItem="{Binding Employee.Role}" 
+              ItemsSource="{Binding Roles}"
+              ToolTip="Выберите роль сотрудника"/>
+        </StackPanel>
+    </Grid>
+</Window>

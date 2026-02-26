@@ -1,0 +1,49 @@
+﻿<Window x:Class="AIS.Warehouse.UI.Views.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="АИС Складской учет — Админ" Height="600" Width="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <!-- Меню -->
+            <RowDefinition Height="60"/>
+            <!-- Шапка -->
+            <RowDefinition Height="40"/>
+            <!-- Панель кнопок -->
+            <RowDefinition Height="*"/>
+            <!-- Контент -->
+        </Grid.RowDefinitions>
+
+        <!-- Меню -->
+        <Menu Grid.Row="0" Background="#FFD0D09E" FontFamily="Bodoni MT Black" Foreground="#FF757527">
+            <MenuItem Header="Таблицы">
+                <MenuItem Header="Сотрудники" Command="{Binding OpenEmployeesCommand}" />
+                <MenuItem Header="Поставщики" Command="{Binding OpenSuppliersCommand}" />
+                <MenuItem Header="Товары" Command="{Binding OpenItemsCommand}" />
+                <MenuItem Header="Компании" Command="{Binding OpenCompaniesCommand}" />
+            </MenuItem>
+            <MenuItem Header="Журнал" Command="{Binding OpenOperationsCommand}" />
+            <MenuItem Header="Контакты" Command="{Binding OpenContactsCommand}" />
+        </Menu>
+
+        <!-- Шапка -->
+        <Border Background="Beige" Grid.Row="1">
+            <Grid>
+                <TextBlock Text="{Binding WelcomeText}" Foreground="#FFD0D09E" FontSize="16" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                <TextBlock Text="{Binding CurrentDate}" Foreground="#FFD0D09E" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0"/>
+            </Grid>
+        </Border>
+
+        <!-- Панель CRUD -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Background="#FFD0D09E" VerticalAlignment="Center">
+            <Button Content="Сотрудники" Width="120" Margin="10,0" Command="{Binding OpenEmployeesCommand}" Background="Beige" FontFamily="Bodoni MT Black" Foreground="#FFB1B163"/>
+            <Button Content="Поставщики" Width="120" Margin="10,0" Command="{Binding OpenSuppliersCommand}" Background="Beige" FontFamily="Bodoni MT Black" Foreground="#FFB1B163"/>
+            <Button Content="Товары" Width="120" Margin="10,0" Command="{Binding OpenItemsCommand}" Background="Beige" FontFamily="Bodoni MT Black" Foreground="#FFB1B163"/>
+            <Button Content="Компании" Width="120" Margin="10,0" Command="{Binding OpenCompaniesCommand}" Background="Beige" FontFamily="Bodoni MT Black" Foreground="#FFB1B163"/>
+            <Button Content="Журнал" Width="100" Margin="10,0" Command="{Binding OpenOperationsCommand}" Background="Beige" FontFamily="Bodoni MT Black" Foreground="#FFB1B163"/>
+        </StackPanel>
+
+        <!-- Контент -->
+        <ContentControl Grid.Row="3" Content="{Binding CurrentView}"/>
+    </Grid>
+</Window>
