@@ -160,6 +160,11 @@ MVVM
 
 
 
+РУКОВОДСТВО ОПЕРАТОРА
+-------
+
+[Руководство оператора AIS-м.docx](https://github.com/user-attachments/files/25574039/AIS-.docx)
+
 
 
 ❗ВНИМАЕНИЕ:❗
